@@ -5,7 +5,7 @@ import traceback
 import random
 app = Flask(__name__)
 
-token = "<ACCESS_TOKEN_HERE>"
+token = "EAAShKPhHc6gBAALwYZCeFZAUgj9kRklG72YgsBGJFjZBgK6rpLZCSla81zYm2ZBWV4fXBnnkDtNvxuGukX7WA3qvWltLC9wl8ZB0UGdPxqXkj9PwhY6moHm9TiABZCm3xFtEVMbAzK79OzWvYV8oJRqw70hhZB4tLprEc2ZAuUyPsTwZDZD"
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
@@ -19,7 +19,7 @@ def webhook():
     except Exception as e:
       print traceback.format_exc() # something went wrong
   elif request.method == 'GET': # For the initial verification
-    if request.args.get('hub.verify_token') == '<VERIFY_TOKEN_HERE>':
+    if request.args.get('hub.verify_token') == 'test':
       return request.args.get('hub.challenge')
     return "Wrong Verify Token"
   return "Hello World" #Not Really Necessary
